@@ -44,7 +44,7 @@ public class ImagePanel extends JPanel implements ActionListener {
 		super.paintComponent(g);
 
 		if (image != null) {
-			g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+			g.drawImage(image, 0, 0, 1000, 800, null);
 
 		}
 		if (petpic != null) {

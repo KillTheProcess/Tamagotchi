@@ -41,14 +41,14 @@ public class Main {
 	//	JPanel petpanel = new JPanel();
         pp.setLayout(new BorderLayout());
         try {
-			pp.setImage(ImageIO.read(new File("pics/back.jpg")));
+			pp.setImage(ImageIO.read(new File("pics/back2.jpg")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
        
 		JFrame frame = new JFrame();
-		frame.setSize(600, 800);
+		frame.setSize(540, 960);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 

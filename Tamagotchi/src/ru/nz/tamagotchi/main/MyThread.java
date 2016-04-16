@@ -7,7 +7,6 @@ public class MyThread implements Runnable {
 	public void run() {
 
 		while (true) {
-			System.out.println("fafaf");
 			while (pp.x < 250) {
 				pp.x++;
 				try {
