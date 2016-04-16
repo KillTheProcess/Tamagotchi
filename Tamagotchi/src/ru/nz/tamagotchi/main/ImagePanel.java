@@ -24,7 +24,7 @@ public class ImagePanel extends JPanel implements ActionListener {
 		timer.start();
 		t1.start();
 		try {
-			petpic = ImageIO.read(new File("pics/aay.png"));
+			petpic = ImageIO.read(new File("pics/alien3.png"));
 		} catch (IOException e) {
 
 			e.printStackTrace();
@@ -48,7 +48,7 @@ public class ImagePanel extends JPanel implements ActionListener {
 
 		}
 		if (petpic != null) {
-			g.drawImage(petpic, x, 150, 300, 300, null);
+			g.drawImage(petpic, x, 490, 160, 240, null);
 
 		}
 
