@@ -33,24 +33,28 @@ public abstract class Animal {
 		return name;
 	}
 	
-	protected void setHunger(int pHunger){
+	public void setHunger(int pHunger){
 		hunger = pHunger;
 	}
 	
-	protected void setEnergy(int pEnergy){
+	public void setEnergy(int pEnergy){
 		energy = pEnergy;
 	}
 	
-	protected void setHappy(int pHappy){
+	public void setHappy(int pHappy){
 		happy = pHappy;
 	}
 	
-	protected void setAge(int pAge){
+	public void setAge(int pAge){
 		age = pAge;
 	}
 	
-	protected void setName(String pName){
+	public void setName(String pName){
 		name = pName;
+	}
+	
+	public void setHealth(int pHealth){
+		health = pHealth;
 	}
 	
 }

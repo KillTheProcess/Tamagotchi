@@ -12,7 +12,7 @@ public class MyPanel extends JPanel {
 	JButton btnEat, btnSleep, btnStatus, btnSave, btnLoad;
 	JProgressBar pbFood, pbEnergy, pbHealth;
 	JLabel lFood, lEnergy, lHealth;
-	
+
 	
 	KeyListener listen = new KeyListener();
 	//Image img = new ImageIcon("pics/back.jpg").getImage();
@@ -92,6 +92,7 @@ public class MyPanel extends JPanel {
 		pbFood.setValue(Main.pet.getHunger());
 		pbEnergy.setValue(Main.pet.getEnergy());
 		pbHealth.setValue(Main.pet.getHealth());
+		
 	}
 	
 
@@ -114,7 +115,7 @@ public class MyPanel extends JPanel {
 				Main.pet.status();
 			}
 			if (e.getSource() == (btnSave)) {
-				Main.saveload.save();
+				
 			
 			}
 			if (e.getSource() == (btnLoad)) {
@@ -125,5 +126,11 @@ public class MyPanel extends JPanel {
 			
 
 		}
+
+		
 	}
+
+
+
+	
 }

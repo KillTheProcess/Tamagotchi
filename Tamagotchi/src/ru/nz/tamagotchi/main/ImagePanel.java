@@ -15,12 +15,13 @@ public class ImagePanel extends JPanel implements ActionListener {
 
 	Timer timer = new Timer(1000, this);
 	Thread t1 = new Thread(new MyThread());
-
+	SaveAndLoad sal = new SaveAndLoad();
 	private Image image;
 	Image petpic;
 	static int x = 150, y = 300;
 
 	public ImagePanel() {
+		//(new SaveAndLoad()).load();
 		timer.start();
 		t1.start();
 		try {
@@ -59,7 +60,7 @@ public class ImagePanel extends JPanel implements ActionListener {
 		Main.pet.noFood();
 		Main.pet.noSleep();
 		Main.panel.updatePB();
-
+		sal.save();
 		repaint();
 
 	}

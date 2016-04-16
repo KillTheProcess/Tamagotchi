@@ -1,10 +1,14 @@
 package ru.nz.tamagotchi.pet;
 
+import java.io.BufferedWriter;
+
+
 import ru.nz.tamagotchi.animal.Animal;
 
 public class Pet extends Animal {
+	
 
-	public Pet(String pName, int pHunger, int pAge, int pEnergy, int pHappy, int pHealth) {
+	public Pet( String pName, int pHunger, int pAge, int pEnergy, int pHappy, int pHealth) {
 		name = pName;
 		hunger = pHunger;
 		age = pAge;
@@ -12,7 +16,9 @@ public class Pet extends Animal {
 		happy = pHappy;
 		health = pHealth;
 
+
 	}
+
 
 	public void feed() {
 		hunger += 10;
@@ -54,6 +60,8 @@ public class Pet extends Animal {
 			death();
 		}
 	}
+	
+
 
 	private void death() {
 		

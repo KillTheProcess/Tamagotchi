@@ -1,4 +1,4 @@
-package ru.nz.tamagotchi.main;
+/*package ru.nz.tamagotchi.main;
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -37,5 +37,5 @@ public class SaveLoad {
 	 * System.out.println("Game Loaded"); } catch (IOException e) {
 	 * 
 	 * } } }
-	 */ 
-}
+	 
+}*/

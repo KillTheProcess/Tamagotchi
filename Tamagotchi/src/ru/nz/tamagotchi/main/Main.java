@@ -15,12 +15,14 @@ import ru.nz.tamagotchi.pet.Pet;
 
 public class Main {
 	
-	static String mName;
-	static int mHunger =100, mAge=0, mEnergy=100, mHappy=100, mHealth=100;
 	
-	static Pet pet = new Pet(mName, mHunger , mAge, mEnergy, mHappy, mHealth);
-	static SaveLoad saveload = new SaveLoad();
-	static Scanner sc = new Scanner(System.in);
+	
+	static String mName;
+	static int mHunger=100, mAge=100, mEnergy=100, mHappy=100, mHealth=100;
+	
+	static Pet pet = new Pet(mName, mHunger, mAge, mEnergy, mHappy, mHealth);
+	//static SaveLoad saveload = new SaveLoad();
+	//static Scanner sc = new Scanner(System.in);
 	static MyPanel panel = new MyPanel();
 	static int r;
 	int n = 0;
@@ -28,6 +30,7 @@ public class Main {
 	
 
 	public static void main(String[] args) {
+		
 		setBackround();
 		
 			}
@@ -37,6 +40,7 @@ public class Main {
 	
 	
 	public static void setBackround(){
+	
 		ImagePanel pp = new ImagePanel();	
 	//	JPanel petpanel = new JPanel();
         pp.setLayout(new BorderLayout());
