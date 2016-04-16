@@ -13,7 +13,7 @@ import javax.swing.JScrollPane;
 
 import ru.nz.tamagotchi.pet.Pet;
 
-public class Main {
+public class Main {//sdads
 	
 	static String mName;
 	static int mHunger =100, mAge=0, mEnergy=100, mHappy=100, mHealth=100;
