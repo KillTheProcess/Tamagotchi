@@ -40,6 +40,7 @@ public class Main {
 		setBackround();
 		(new SaveAndLoad()).load();
 		statLoads();
+		Main.panel.updatePB();
 	}
 
 	public static void setBackround() {
