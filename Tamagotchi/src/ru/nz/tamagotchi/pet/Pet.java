@@ -1,6 +1,5 @@
 package ru.nz.tamagotchi.pet;
 
-import java.io.BufferedWriter;
 
 import ru.nz.tamagotchi.animal.Animal;
 import ru.nz.tamagotchi.main.SaveAndLoad;

@@ -1,5 +1,6 @@
 package ru.nz.tamagotchi.main;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,7 +10,13 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 
+import ru.nz.tamagotchi.pet.Pet;
+
 public class MyPanel extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton btnEat, btnSleep, btnHappy, btnOK, btnNewGame;
 	JProgressBar pbFood, pbEnergy, pbHealth, pbHappy;
 	JLabel lFood, lEnergy, lHealth, lHappy, lName;
@@ -18,6 +25,7 @@ public class MyPanel extends JPanel {
 	
 	KeyListener listen = new KeyListener();
 	
+	Pet pet;
 	public MyPanel() {
 		setLayout(null);
 		
@@ -104,19 +112,27 @@ public class MyPanel extends JPanel {
         add(lHappy);
         
         lName = new JLabel();
-        lName.setText(" ");
+        lName.setText(Main.pet.getName());
         lName.setVisible(true);
-        lName.setBounds(300, 50, 146, 14);
+        lName.setBounds(300, 50, 250, 50);
+        lName.setFont(new Font("Ariel", 2, 24));
         add(lName);
-		
-		
+        
 	}
 
+	public void unvisibleName(){
+		if (Main.pet.getName() != null) {
+			btnOK.setVisible(false);
+			tfName. setVisible(false);
+		}
+	}
+	
 	public void updatePB(){
 		pbFood.setValue(Main.pet.getHunger());
 		pbEnergy.setValue(Main.pet.getEnergy());
 		pbHealth.setValue(Main.pet.getHealth());
 		pbHappy.setValue(Main.pet.getHappy());
+		lName.setText(Main.pet.getName());
 	}
 	
 

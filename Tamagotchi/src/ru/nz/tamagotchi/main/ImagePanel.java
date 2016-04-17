@@ -13,6 +13,10 @@ import javax.swing.Timer;
 
 public class ImagePanel extends JPanel implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Timer timer = new Timer(5000, this);
 	Timer timerpaint = new Timer(1, new ActionListener() {
 		

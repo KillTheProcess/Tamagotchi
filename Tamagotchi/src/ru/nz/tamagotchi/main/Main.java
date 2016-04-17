@@ -1,21 +1,17 @@
 package ru.nz.tamagotchi.main;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
-
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import ru.nz.tamagotchi.pet.Pet;
 
 public class Main {
 
-	SaveAndLoad sal = new SaveAndLoad();
+	static SaveAndLoad sal = new SaveAndLoad();
 	static String mName;
 	static int mHunger=100 , mAge=0 , mEnergy=100 , mHappy=100 , mHealth=100 ;
 
@@ -26,21 +22,22 @@ public class Main {
 	int n = 0;
 
 	public static void statLoads(){
-		pet.setName((new SaveAndLoad().SName));
-		pet.setHunger(((new SaveAndLoad().SHunger)));
-		pet.setAge(((new SaveAndLoad().SAge)));
-		pet.setEnergy(((new SaveAndLoad().SEnergy)));
-		pet.setHappy(((new SaveAndLoad().SHappy)));
-		pet.setHealth(((new SaveAndLoad().SHealth)));
+		pet.setName((SaveAndLoad.SName));
+		pet.setHunger(((SaveAndLoad.SHunger)));
+		pet.setAge(((SaveAndLoad.SAge)));
+		pet.setEnergy(((SaveAndLoad.SEnergy)));
+		pet.setHappy(((SaveAndLoad.SHappy)));
+		pet.setHealth(((SaveAndLoad.SHealth)));
 		System.out.println("Голод после чтения из Анимал" + pet.getHunger());
 	}
 	
 	public static void main(String[] args) {
-
+		
 		setBackround();
-		(new SaveAndLoad()).load();
+		sal.load();
 		statLoads();
-		Main.panel.updatePB();
+		panel.updatePB();
+		panel.unvisibleName();
 	}
 
 	public static void setBackround() {

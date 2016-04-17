@@ -7,10 +7,10 @@ public class MyThread implements Runnable {
 	public void run() {
 
 		while (true) {
-			while (pp.x < 250) {
+			while (ImagePanel.x < 250) {
 				
 				try {
-					pp.x++;
+					ImagePanel.x++;
 					
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
@@ -18,10 +18,10 @@ public class MyThread implements Runnable {
 					e.printStackTrace();
 				}
 			}
-			while (pp.x > 0) {
+			while (ImagePanel.x > 0) {
 				
 				try {
-					pp.x--;
+					ImagePanel.x--;
 					
 					Thread.sleep(100);
 				} catch (InterruptedException e) {

@@ -1,6 +1,5 @@
 package ru.nz.tamagotchi.main;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -55,6 +54,7 @@ public class SaveAndLoad {
 			SHappy = sc.nextInt();
 			SHealth = sc.nextInt();
 			System.out.println("энергия при чтении" + SEnergy);
+			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
