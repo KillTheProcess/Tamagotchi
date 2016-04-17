@@ -8,8 +8,10 @@ public class MyThread implements Runnable {
 
 		while (true) {
 			while (pp.x < 250) {
-				pp.x++;
+				
 				try {
+					pp.x++;
+					
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -17,8 +19,10 @@ public class MyThread implements Runnable {
 				}
 			}
 			while (pp.x > 0) {
-				pp.x--;
+				
 				try {
+					pp.x--;
+					
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block

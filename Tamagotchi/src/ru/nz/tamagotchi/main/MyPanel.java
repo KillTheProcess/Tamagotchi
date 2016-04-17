@@ -7,16 +7,16 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.JTextField;
 
 public class MyPanel extends JPanel {
-	JButton btnEat, btnSleep, btnStatus, btnSave, btnLoad;
-	JProgressBar pbFood, pbEnergy, pbHealth;
-	JLabel lFood, lEnergy, lHealth;
+	JButton btnEat, btnSleep, btnHappy, btnOK, btnNewGame;
+	JProgressBar pbFood, pbEnergy, pbHealth, pbHappy;
+	JLabel lFood, lEnergy, lHealth, lHappy, lName;
+	JTextField tfName;
 
 	
 	KeyListener listen = new KeyListener();
-	//Image img = new ImageIcon("pics/back.jpg").getImage();
-	//JLabel imageLabel = new JLabel(new ImageIcon("img.jpg"));
 	
 	public MyPanel() {
 		setLayout(null);
@@ -31,20 +31,20 @@ public class MyPanel extends JPanel {
 		btnSleep.addActionListener(listen);
 		add(btnSleep);
 
-		btnStatus = new JButton("Status");
-		btnStatus.setBounds(480, 93, 89, 30);
-		btnStatus.addActionListener(listen);
-		add(btnStatus);
+		btnHappy = new JButton("Play");
+		btnHappy.setBounds(480, 93, 89, 30);
+		btnHappy.addActionListener(listen);
+		add(btnHappy);
 		
-		btnSave = new JButton("Save");
-		btnSave.setBounds(480, 650, 89, 30);
-		btnSave.addActionListener(listen);
-		add(btnSave);
+		btnOK = new JButton("OK");
+		btnOK.setBounds(300, 175, 89, 30);
+		btnOK.addActionListener(listen);
+		add(btnOK);
 		
-		btnLoad = new JButton("Load...");
-		btnLoad.setBounds(480, 690, 89, 30);
-		btnLoad.addActionListener(listen);
-		add(btnLoad);
+		btnNewGame = new JButton("New Game");
+		btnNewGame.setBounds(480, 690, 89, 30);
+		btnNewGame.addActionListener(listen);
+		add(btnNewGame);
 		
 		pbFood = new JProgressBar();
 		pbFood.setBounds(70, 11, 146, 14);
@@ -70,6 +70,19 @@ public class MyPanel extends JPanel {
 		pbHealth.setStringPainted(true);
 		add(pbHealth);
 		
+		pbHappy = new JProgressBar();
+		pbHappy.setBounds(70, 134, 146, 14);
+		pbHappy.setMinimum(0);
+		pbHappy.setMaximum(100);
+		pbHappy.setValue(Main.pet.getHappy());
+		pbHappy.setStringPainted(true);
+		add(pbHappy);
+		
+		tfName = new JTextField();
+		tfName.setBounds(70, 175, 146, 20);
+		tfName.setVisible(true);
+		add(tfName);
+				
 		lFood = new JLabel();
 		lFood.setText("Голод");
 		lFood.setBounds(15, 11, 146, 14);
@@ -84,6 +97,17 @@ public class MyPanel extends JPanel {
 		lHealth.setText("Здоровье");
 		lHealth.setBounds(15, 93, 146, 14);
         add(lHealth);
+        
+        lHappy = new JLabel();
+        lHappy.setText("Счастье");
+        lHappy.setBounds(15, 134, 146, 14);
+        add(lHappy);
+        
+        lName = new JLabel();
+        lName.setText(" ");
+        lName.setVisible(true);
+        lName.setBounds(300, 50, 146, 14);
+        add(lName);
 		
 		
 	}
@@ -92,7 +116,7 @@ public class MyPanel extends JPanel {
 		pbFood.setValue(Main.pet.getHunger());
 		pbEnergy.setValue(Main.pet.getEnergy());
 		pbHealth.setValue(Main.pet.getHealth());
-		
+		pbHappy.setValue(Main.pet.getHappy());
 	}
 	
 
@@ -111,26 +135,28 @@ public class MyPanel extends JPanel {
 				pbEnergy.setValue(Main.pet.getEnergy());
 
 			}
-			if (e.getSource() == (btnStatus)) {
-				Main.pet.status();
+			if (e.getSource() == (btnHappy)) {
+				Main.pet.happy();
 			}
-			if (e.getSource() == (btnSave)) {
-				//(new SaveAndLoad()).save();
 			
+			if (e.getSource() == (btnOK)) {
+				Main.pet.setName(tfName.getText());
+				tfName.setVisible(false);
+				btnOK.setVisible(false);
+				lName.setText(tfName.getText());
+				System.out.println(Main.pet.getName());
 			}
-			if (e.getSource() == (btnLoad)) {
-			//	Main.saveload.load();
 			
+			if (e.getSource() == (btnNewGame)) {
+					Main.pet.newGame();
+					tfName.setVisible(true);
+					tfName.setText(null);
+					btnOK.setVisible(true);
+					updatePB();
 			}
-
-			
 
 		}
 
-		
 	}
-
-
-
 	
 }

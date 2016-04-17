@@ -20,10 +20,7 @@ public class Pet extends Animal {
 	
 	
 
-	
-	/*public void statLoad(){
-		name = sal.SName;
-	}*/
+
 	
 	public void feed() {
 		hunger += 10;
@@ -37,6 +34,11 @@ public class Pet extends Animal {
 		if (energy > 100)
 			energy = 100;
 		System.out.println("Моя энергия " + energy);
+	}
+	
+	public void happy(){
+		happy +=10;
+		if (happy > 100) happy = 100;
 	}
 
 	public void status() {
@@ -54,9 +56,28 @@ public class Pet extends Animal {
 
 	public void noSleep() {
 		energy -= 1;
-		if (energy < 0)
+		if (energy < 0){
 			energy = 0;
+			noHappy();
+		}
 	}
+
+	public void noHappy() {
+		happy -=1;
+		
+	}
+	
+	public void newGame(){
+		name = null;
+		hunger = 100;
+		age = 0;
+		energy = 100;
+		happy = 100;
+		health = 100;
+		
+	}
+
+
 
 	public void noHealth() {
 		health -= 1;

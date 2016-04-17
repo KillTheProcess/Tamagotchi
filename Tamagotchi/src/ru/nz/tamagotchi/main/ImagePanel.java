@@ -13,7 +13,15 @@ import javax.swing.Timer;
 
 public class ImagePanel extends JPanel implements ActionListener {
 
-	Timer timer = new Timer(1000, this);
+	Timer timer = new Timer(5000, this);
+	Timer timerpaint = new Timer(1, new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			repaint();
+			
+		}
+	} );
 	Thread t1 = new Thread(new MyThread());
 
 	private Image image;
@@ -23,6 +31,7 @@ public class ImagePanel extends JPanel implements ActionListener {
 	public ImagePanel() {
 		(new SaveAndLoad()).load();
 		timer.start();
+		timerpaint.start();
 		t1.start();
 		try {
 			petpic = ImageIO.read(new File("pics/alien3.png"));
@@ -62,6 +71,7 @@ public class ImagePanel extends JPanel implements ActionListener {
 		Main.pet.noSleep();
 		Main.panel.updatePB();
 		(new SaveAndLoad()).save();
+	
 		repaint();
 
 	}
