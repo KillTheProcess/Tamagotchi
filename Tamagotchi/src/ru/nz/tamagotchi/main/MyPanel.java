@@ -115,7 +115,7 @@ public class MyPanel extends JPanel {
 				Main.pet.status();
 			}
 			if (e.getSource() == (btnSave)) {
-				
+				//(new SaveAndLoad()).save();
 			
 			}
 			if (e.getSource() == (btnLoad)) {
