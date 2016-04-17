@@ -45,11 +45,11 @@ public class ImagePanel extends JPanel implements ActionListener {
 		super.paintComponent(g);
 
 		if (image != null) {
-			g.drawImage(image, 0, 0, 1000, 800, null);
+			g.drawImage(image, 0, 100, 1000, 600, null);
 
 		}
 		if (petpic != null) {
-			g.drawImage(petpic, x, 490, 160, 240, null);
+			g.drawImage(petpic, x, 430, 160, 240, null);
 
 		}
 

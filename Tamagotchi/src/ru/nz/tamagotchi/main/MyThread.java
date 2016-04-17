@@ -10,7 +10,7 @@ public class MyThread implements Runnable {
 			while (pp.x < 250) {
 				pp.x++;
 				try {
-					Thread.sleep(20);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -19,7 +19,7 @@ public class MyThread implements Runnable {
 			while (pp.x > 0) {
 				pp.x--;
 				try {
-					Thread.sleep(20);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
