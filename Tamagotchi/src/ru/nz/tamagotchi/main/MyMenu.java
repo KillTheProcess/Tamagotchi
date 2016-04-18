@@ -1,5 +1,6 @@
 package ru.nz.tamagotchi.main;
 
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,7 +28,7 @@ public class MyMenu extends JPanel {
 	Image menuback;
 	static int x = 150, y = 300;
 	KeyListener2 listen = new KeyListener2();
-
+	
 	public MyMenu() {
 		btnnewgame = new JButton("Играть");
 		btnnewgame.setBounds(x, y, 2, 2);
@@ -43,12 +44,12 @@ public class MyMenu extends JPanel {
 		btnexit.setBounds(x, y, 2, 2);
 		btnexit.addActionListener(listen);
 		add(btnexit);
-
+		
 	}
 
-	public void setImage(BufferedImage read) {
+	public void setImage(Image menuback) {
 		// TODO Auto-generated method stub
-
+		this.menuback = menuback;
 	}
 
 	class KeyListener2 implements ActionListener {
@@ -66,6 +67,18 @@ public class MyMenu extends JPanel {
 
 			}
 		}
+	}
+	
+	
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+
+		if (menuback != null) {
+			g.drawImage(menuback, 0, 100, 1000, 600, null);
+
+		}
+		
+
 	}
 
 }
